@@ -48,6 +48,5 @@ def gestionArg(argv):
 if __name__ == '__main__':
 
     file_csv = gestionArg(sys.argv[1:])
-    print(file_csv)
-    stat = CalculStat()
+    stat = CalculStat(file_csv)
     pdf = ReportPdf()
