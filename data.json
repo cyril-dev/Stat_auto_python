@@ -1,0 +1,15 @@
+{
+    "Nombres d'entr\u00e9es": 1990,
+    "Nombre d'items": 9,
+    "liste des colonnes": {
+        "ID PDC local": "ID PDC local",
+        "Statut du point de recharge": "Statut du point de recharge",
+        "URL Description Point de charge": "URL Description Point de charge",
+        "Heure mise \u00e0 jour": "Heure mise \u00e0 jour",
+        "Coordonn\u00e9es g\u00e9ographiques": "Coordonn\u00e9es g\u00e9ographiques",
+        "Adresse station": "Adresse station",
+        "Code INSEE commune": "Code INSEE commune",
+        "CodePostale": "CodePostale",
+        "Arrondissement": "Arrondissement"
+    }
+}
