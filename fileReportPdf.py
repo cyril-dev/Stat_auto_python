@@ -1,4 +1,3 @@
-from turtle import title
 from fpdf import FPDF
 #import fpdf
 
@@ -15,15 +14,15 @@ class ReportPdf(FPDF):
        self.set_font('Arial', 'B', 20)
        # Calculate width of title and position
        w = self.get_string_width(self.title) + 6
-       self.set_x((210 - w) / 2)
+       #self.set_x((210 - w) / 2)
        # Colors of frame, background and text
-       self.set_draw_color(0, 80, 180)
-       self.set_fill_color(230, 230, 0)
+       #self.set_draw_color(0, 80, 180)
+       #self.set_fill_color(230, 230, 0)
        self.set_text_color(220, 50, 50)
        # Thickness of frame (1 mm)
-       self.set_line_width(1)
+       #self.set_line_width(1)
        # Title
-       self.cell(w, 9, title, 1, 1, 'C', 1)
+       self.cell(w, 9, self.title, 1, 1, 'C', 1)
        # Line break
        self.ln(10)
 
@@ -47,10 +46,10 @@ class ReportPdf(FPDF):
         # Line break
         self.ln(4)
 
-    def chapter_body(self, name):
+    def chapter_body(self, txt):
         # Read text file
-        with open(name, 'rb') as fh:
-            txt = fh.read().decode('latin-1')
+        #with open(name, 'rb') as fh:
+        #    txt = fh.read().decode('latin-1')
         # Times 12
         self.set_font('Times', '', 12)
         # Output justified text
@@ -61,7 +60,7 @@ class ReportPdf(FPDF):
         self.set_font('Arial', 'I')
         self.cell(0, 5, '(end of excerpt)')
 
-    def print_chapter(self, num, title, name):
+    def print_chapter(self, num, title_chapter, name):
         self.add_page()
-        self.chapter_title(num, title)
+        self.chapter_title(num, title_chapter)
         self.chapter_body(name)
