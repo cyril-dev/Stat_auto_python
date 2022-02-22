@@ -1,4 +1,5 @@
 import getopt
+import json
 
 def gestionArg(argv):
     """Description 
@@ -30,4 +31,15 @@ def gestionArg(argv):
             else:
                 print("l'extention du fichier est non valide")
                 sys.exit(2)
-                           
+
+
+def fichierData(dict_data_json):
+    """Description fichierData
+
+    Args:
+        dict_data_json ([dict]): [description]
+    """
+    print("Création du fichier data.json\n")
+    with open("data.json","w") as f:
+        json.dump(dict_data_json,f,indent=4)
+    print("=============================\n")                       

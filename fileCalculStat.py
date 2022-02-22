@@ -1,6 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import json
+
 
 
 
@@ -36,7 +36,4 @@ class CalculStat():
     def meanByItem(self,item):
         return self.data[item].value_counts().mean() 
         
-    def fichierData(self):
-        print("Création du fichier data.json")
-        with open("data.json","w") as f:
-            json.dump(self.dict_data,f,indent=4)
+    
