@@ -34,6 +34,26 @@ class CalculStat():
         return self.dict_data
 
     def meanByItem(self,item):
-        return self.data[item].value_counts().mean() 
+        return self.data[item].value_counts().mean()
+    
+    def diaCirculaire(self,item):
+        """_summary_
+
+        Args:
+            item (string): _description_
+        """
+        plt.pie(self.data[item].value_counts())
+        plt.savefig("DiaCirculaire_"+item+".png")
+
+    def resumeItem(self,item,value,item2):
+        """_summary_
+
+        Args:
+            item (String): _description_
+            value (string): _description_
+            item2 (string): _description_
+        """
+        data10 = self.data.loc[self.data[item] == value]
+        data10[item2].value_counts()
         
     

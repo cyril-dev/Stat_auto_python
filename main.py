@@ -15,7 +15,7 @@ if __name__ == '__main__':
     stat = CalculStat(file_csv)
     dist_data = stat.contenuFile()
     dist_data["moyenne general"] = stat.meanByItem("CodePostale")
-    
+    stat.diaCirculaire('Statut du point de recharge')
     # Création du fichier data.json 
     lib.fichierData(dist_data)
    
