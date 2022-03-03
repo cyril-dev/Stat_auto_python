@@ -12,5 +12,14 @@
         "CodePostale": "CodePostale",
         "Arrondissement": "Arrondissement"
     },
-    "moyenne general": 99.25
+    "moyenne general": 99.25,
+    "Statut_point_charge": {
+        "path_diag": "/home/ironman/dev/stat/Stat_projet_python/Stat_auto_python/DiaCirculaire_Statut du point de recharge.png",
+        "resume": {
+            "Disponible": 1380,
+            "Occup\u00e9 (en charge)": 423,
+            "Inconnu": 147,
+            "En maintenance": 40
+        }
+    }
 }

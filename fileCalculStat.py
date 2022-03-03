@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 
 
 
@@ -37,15 +38,24 @@ class CalculStat():
         return self.data[item].value_counts().mean()
     
     def diaCirculaire(self,item):
-        """_summary_
+        """Descristion
 
         Args:
             item (string): _description_
-        """
-        plt.pie(self.data[item].value_counts())
-        plt.savefig("DiaCirculaire_"+item+".png")
 
-    def resumeItem(self,item,value,item2):
+        Returns:
+            String: chemin de l'image du diagramme
+        """
+        namefile = "DiaCirculaire_"+item+".png"
+
+        plt.pie(self.data[item].value_counts(),autopct='%1.1f%%',shadow=True, startangle=90)
+        #self.data[item].value_counts().plot(kind='pie')
+        plt.legend(self.data[item].value_counts().index.tolist(),title=item,loc="lower left",bbox_to_anchor=(0.75, -0.15, 1, 1.5))
+        plt.savefig(namefile)
+        return os.path.join(os.path.dirname(__file__), namefile)
+        
+
+    def resumeItemByVar(self,item,value,item2):
         """_summary_
 
         Args:
@@ -55,5 +65,6 @@ class CalculStat():
         """
         data10 = self.data.loc[self.data[item] == value]
         data10[item2].value_counts()
-        
-    
+
+    def resumeItem(self,item):
+        return self.data[item].value_counts().to_dict()

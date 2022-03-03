@@ -42,25 +42,27 @@ class ReportPdf(FPDF):
         # Background color
         self.set_fill_color(200, 220, 255)
         # Title
-        self.cell(0, 6, 'Chapter %d : %s' % (num, label), 0, 1, 'L', 1)
+        self.cell(0, 6, 'Partie %d : %s' % (num, label), 0, 1, 'L', 1)
         # Line break
         self.ln(4)
 
-    def chapter_body(self, txt):
+    def chapter_body(self, data):
+        print(data)
         # Read text file
         #with open(name, 'rb') as fh:
         #    txt = fh.read().decode('latin-1')
         # Times 12
         self.set_font('Times', '', 12)
         # Output justified text
-        self.multi_cell(0, 5, txt)
+        #self.multi_cell(0, 5, data.get('Nombre d\'items'))
         # Line break
         self.ln()
         # Mention in italics
-        self.set_font('Arial', 'I')
-        self.cell(0, 5, '(end of excerpt)')
+        #self.set_font('Arial', 'I')
+        #self.cell(0, 5, data['Statut_point_charge']['path_diag'])
+       # self.image()
 
-    def print_chapter(self, num, title_chapter, name):
+    def print_chapter(self, num, title_chapter, data):
         self.add_page()
         self.chapter_title(num, title_chapter)
-        self.chapter_body(name)
+        self.chapter_body(data)
